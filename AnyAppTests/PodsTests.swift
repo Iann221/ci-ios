@@ -27,7 +27,7 @@ class PodsTests: XCTestCase {
     
     func testPods() throws {
         viewModel.item.subscribe(onNext: { item in
-            XCTAssertEqual(item, 68)
+            XCTAssertEqual(item, 69)
         }).disposed(by: disposeBag)
     }
 

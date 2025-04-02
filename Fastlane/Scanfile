@@ -4,7 +4,7 @@
 workspace "AnyApp.xcworkspace"
 scheme "AnyApp"
 sdk "iphonesimulator"
-device "iPhone 11"
+device "iPhone 15 Pro"
 code_coverage true
 xcargs '-parallelizeTargets'
 prelaunch_simulator true
