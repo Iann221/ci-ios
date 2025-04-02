@@ -27,6 +27,19 @@ jobs:
       - name: Install gems
         run: bundle install
 
+      - name: Cache CocoaPods
+        uses: actions/cache@v3
+        with:
+          path: |
+            Pods
+            ~/Library/Caches/CocoaPods
+            ~/.cocoapods/repos
+          key: ${{ runner.os }}-cocoapods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: ${{ runner.os }}-cocoapods-
+
+      - name: Install CocoaPods Dependencies
+        run: bundle exec pod install --repo-update
+
       - name: Swift Packages Cache
         uses: actions/cache@v3
         id: cache
